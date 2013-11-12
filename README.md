@@ -11,23 +11,31 @@ Initial Setup:
 
 
 
-PreProduction Usage:
-1 Download theme to ensure most up to date
-  $ theme download
-2 Ensure changes are saved consistently
-  $ theme watch
+Usage (When Making Changes):
+1 Switch to Production Env
+    $ rake prod
+2 Check to ensure production
+    $ rake env
+3 Download latest production theme
+    $ theme download
+4 Switch to Dev Env
+    $ rake dev
+5 Check to ensure development
+    $ rake env
+6 Ensure that all changes will reflect in dev env
+    $ theme watch (Ctrl+C to exit)
+7 Make changes and view in dev env (Be sure to commit as often as possible)
+8 Once satisfied with changes issue PR
+9 Once PR is merged replace and approved push changes to production
+    $ rake prod
+    $ theme replace
+    $ Y
 
 
 
 
 
-
-
-
-
-
-
-
+============================
 
 Skeleton theme
 ============
