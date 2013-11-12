@@ -1,3 +1,34 @@
+This is the theme for MintSocks.com!
+
+Initial Setup:
+1 Clone Repository
+  $ git clone
+2 Bundle Install Shopify_Theme Gem
+  $ bundle
+3 Configure as Shopify Theme file
+  $ theme configure API_Key password store_url
+
+
+
+
+PreProduction Usage:
+1 Download theme to ensure most up to date
+  $ theme download
+2 Ensure changes are saved consistently
+  $ theme watch
+
+
+
+
+
+
+
+
+
+
+
+
+
 Skeleton theme
 ============
 
