@@ -32,17 +32,27 @@ jQuery(function($){
 					thumbnail_navigation    :   0,			// Thumbnail navigation
 					slides 					:  	[			// Slideshow Images
 														
-{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/3/assets/pre1300.png',
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/slide1.jpg',
 				title : '',
 				thumb : '',
 				url : ''
 				},
-{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/3/assets/pre1300.png',
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/slide2.jpg',
 				title : '',
 				thumb : '',
 				url : ''
 				},
-{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/3/assets/pre1300.png',
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/slide3.jpg?846',
+				title : '',
+				thumb : '',
+				url : ''
+				},
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/slide4.jpg',
+				title : '',
+				thumb : '',
+				url : ''
+				},
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/slide5.jpg',
 				title : '',
 				thumb : '',
 				url : ''
