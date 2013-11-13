@@ -810,7 +810,7 @@ display:inline-block;
     -moz-animation-delay:0s;
     -moz-animation-iteration-count:infinite;
 position:relative;
-top:125px;
+top:0px !important;
 }
 
 @-webkit-keyframes hop {

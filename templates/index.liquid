@@ -1,5 +1,15 @@
 <head>
 
+  <!-- LPNav Files -->
+  {{ 'demo.css' | asset_url | stylesheet_tag }}
+  {{ 'style1.css' | asset_url | stylesheet_tag }}
+      <!--[if IE]>
+      <link rel="stylesheet" type="text/css" href="{{ 'styleIE.css' | asset_url }}" />
+      <![endif]-->
+
+  <!-- END LPNav Files -->
+
+  <!-- Explorer Template Files -->
   {{ 'import.css' | asset_url | stylesheet_tag }}
   {{ 'shutter.css' | asset_url | stylesheet_tag }}
 
@@ -29,6 +39,7 @@
     background-attachment:fixed;
     }
   </style>
+  <!--END Explorer Template Files -->
 
 </head>
 
@@ -172,7 +183,7 @@
 
 
 
-
+<!-- Explorer Template Files -->
 <!-- Grab Google CDN's jQuery, fall back to local if offline -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ 'jquery-1.9.1.min.js' | asset_url }}"><\/script>')</script>
@@ -201,3 +212,6 @@
 
 {{ 'supersized.js' | asset_url | script_tag }}
 {{ 'slideshow.js' | asset_url | script_tag }}
+
+<!-- END Explorer Template Files -->
+
