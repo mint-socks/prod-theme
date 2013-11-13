@@ -467,7 +467,8 @@ $.fn.tweetable.options={limit:5,username:"philipbeel",time:false,rotate:false,sp
           if (s.currentTop !== null) {
             s.stickyElement
               .css('position', '')
-              .css('top', '');
+              .css('top', '')
+              .css('display', '');;
             s.stickyElement.parent().removeClass(s.className);
             s.currentTop = null;
           }
