@@ -1,41 +1,69 @@
 <head>
 
-{{ 'import.css' | asset_url | stylesheet_tag }}
-{{ 'shutter.css' | asset_url | stylesheet_tag }}
+  {{ 'import.css' | asset_url | stylesheet_tag }}
+  {{ 'shutter.css' | asset_url | stylesheet_tag }}
 
-{{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
+  {{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
 
-<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
 
-<style>
-.image-1{
-background-image:url({{ 'pre1300.png' | asset_url }});
-background-size:cover;
-background-attachment:fixed;
-}
-.image-2{
-background-image:url({{ 'pre1300.png' | asset_url }});
-background-size:cover;
-background-attachment:fixed;
-}
-.image-3{
-background-image:url({{ 'pre1300.png' | asset_url }});
-background-size:cover;
-background-attachment:fixed;
-}
-.image-4{
-background-image:url({{ 'pre1300.png' | asset_url }});
-background-size:cover;
-background-attachment:fixed;
-}
-</style>
-
+  <style>
+    .image-1{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+    .image-2{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+    .image-3{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+    .image-4{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+  </style>
 
 </head>
 
-{% assign page = pages.frontpage %}
 
 <div class="rte">
   {{ page.content }}
 </div>
 
+
+
+<!-- Grab Google CDN's jQuery, fall back to local if offline -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ 'jquery-1.9.1.min.js' | asset_url }}"><\/script>')</script>
+{{ 'gumby.min.js' | asset_url | script_tag }}
+
+<!-- our scripts -->
+{{ 'plugins.js' | asset_url | script_tag }}
+{{ 'main.js' | asset_url | script_tag }}
+{{ 'smoothscroll.js' | asset_url | script_tag }}
+
+<!-- home page only script -->
+{{ 'index.js' | asset_url | script_tag }}
+{{ 'ajax.js' | asset_url | script_tag }}
+
+<!-- Preloader script-->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            $("#status").fadeOut(); // will first fade out the loading animation
+            $("#preloader").delay(350).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
+})
+    //]]>
+</script>
+
+<!-- background slideshow -->
+
+{{ 'supersized.js' | asset_url | script_tag }}
+{{ 'slideshow.js' | asset_url | script_tag }}
