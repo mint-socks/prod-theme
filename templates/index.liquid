@@ -1,4 +1,36 @@
 <head>
+
+{{ 'import.css' | asset_url | stylesheet_tag }}
+{{ 'shutter.css' | asset_url | stylesheet_tag }}
+
+{{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
+
+<style>
+.image-1{
+background-image:url({{ 'pre1300.png' | asset_url }});
+background-size:cover;
+background-attachment:fixed;
+}
+.image-2{
+background-image:url({{ 'pre1300.png' | asset_url }});
+background-size:cover;
+background-attachment:fixed;
+}
+.image-3{
+background-image:url({{ 'pre1300.png' | asset_url }});
+background-size:cover;
+background-attachment:fixed;
+}
+.image-4{
+background-image:url({{ 'pre1300.png' | asset_url }});
+background-size:cover;
+background-attachment:fixed;
+}
+</style>
+
+
 </head>
 
 {% assign page = pages.frontpage %}
