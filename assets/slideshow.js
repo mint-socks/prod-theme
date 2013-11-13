@@ -32,17 +32,17 @@ jQuery(function($){
 					thumbnail_navigation    :   0,			// Thumbnail navigation
 					slides 					:  	[			// Slideshow Images
 														
-{image : 'preview/pre1300.png',
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/3/assets/pre1300.png',
 				title : '<h2>EXPLORER HTML TEMPLATE</h2><h6>WEB DESIGN &amp; DEVELOPMENT</h6>',
 				thumb : '',
 				url : ''
 				},
-{image : 'preview/pre1300.png',
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/3/assets/pre1300.png',
 				title : '<h2>GENEVA TEMPLATE</h2><h6>WEB DESIGN &amp; DEVELOPMENT</h6>',
 				thumb : '',
 				url : ''
 				},
-{image : 'preview/pre1300.png',
+{image : 'https://cdn.shopify.com/s/files/1/0289/9509/t/3/assets/pre1300.png',
 				title : '<h2>RESPONSIVE DESIGN</h2><h6>KAWA PHOTOGRAPHY</h6>',
 				thumb : '',
 				url : ''
