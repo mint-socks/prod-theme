@@ -483,7 +483,8 @@ $.fn.tweetable.options={limit:5,username:"philipbeel",time:false,rotate:false,sp
           if (s.currentTop != newTop) {
             s.stickyElement
               .css('position', 'fixed')
-              .css('top', newTop);
+              .css('top', newTop)
+              .css('display', 'block');
 
             if (typeof s.getWidthFrom !== 'undefined') {
               s.stickyElement.css('width', $(s.getWidthFrom).width());
