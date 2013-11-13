@@ -1,0 +1,23 @@
+  <header class="navbar" id="navbar">
+  <div class="row">
+    <a class="toggle" gumby-trigger="#navbar &gt; .row &gt; ul" href="#"><i class="icon-reorder"></i></a>
+    <!-- change image source to your logo file 190px by 65px -->
+    <h1 class="four columns logo">
+    <a href="/">
+    <img src="{{ 'logo.png' | asset_url}}" alt="logo">
+    </a>
+    </h1>
+    <!-- navigation -->
+    <!-- we use href attribute for li active class to work on different sections.
+       we use gumby-goto for easing scroll to target sections -->
+    <ul class="eight columns" id="top-nav">
+      <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">HOME</a></li>
+      <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">WORK</a></li>
+      <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">ABOUT</a></li>
+      <li><a href="#services" class="skip" gumby-goto="#services" gumby-duration="800" gumby-offset="-70">SERVICES</a></li>
+      <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">CONTACT</a></li>
+      <li><a href="blog.html">BLOG</a></li>
+      <li><a href="features.html">FEATURES</a></li>
+    </ul>
+  </div>
+  </header>

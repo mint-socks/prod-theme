@@ -1,27 +1,203 @@
-{% comment %}
-Re-use the 'rte' class wherever you output content that was added by a merchant using
-the Rich Text Editor ( 'rte' stands for rich text editor ).
-Style all HTML elements in that content the same way across the board.
-Use the 'rte' class in your CSS to help maintain that consistency.
-Example: the h2 element should have the same size and color in:
-- product descriptions
-- collection descriptions
-- 'page' pages' content
-- blog post
-{% endcomment %}
+<head>
 
-{% assign page = pages.frontpage %}
+  {{ 'import.css' | asset_url | stylesheet_tag }}
+  {{ 'shutter.css' | asset_url | stylesheet_tag }}
+
+  {{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
+
+  <style>
+    .image-1{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+    .image-2{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+    .image-3{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+    .image-4{
+    background-image:url({{ 'pre1300.png' | asset_url }});
+    background-size:cover;
+    background-attachment:fixed;
+    }
+  </style>
+
+</head>
+
 
 <div class="rte">
   {{ page.content }}
 </div>
 
-{% assign collection = collections.frontpage %}
+<div id="preloader">
+  <div id="status">
+    &nbsp;
+  </div>
+</div>
+<!-- begin main container -->
+<div class="container main">
 
-<ul class="grid clearfix">
-{% for product in collection.products %}
-  {% include 'product-grid-item' with 'three-per-row' %}
-{% else %}
-<p>You have no products in your Frontpage collection. <a href="http://www.shopify.com/admin/custom_collections">Add some.</a></p>
-{% endfor %}
-</ul>
+{% include 'slideshow' %}
+
+  <!-- end slideshow section -->
+
+
+
+{% include 'work' %}
+
+{% include 'about' %}
+
+{% include 'services' %}
+
+  <!-- quote parallax image section 3 -->
+  <div class="image-3" data-stellar-background-ratio="0.5">
+    <div class="black-tint">
+      <!-- QUOTE -->
+      <section class="row heading center bigpadding">
+      <h4 class="ten columns centered">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est..</h4>
+      </section>
+    </div>
+  </div>
+  <!-- end  quote/image parallax div -->
+  <!-- begin showreel div -->
+  <div class="white">
+    <!-- section heading -->
+    <section class="row heading">
+    <h1><span>WATCH OUR</span>SHOWREEL</h1>
+    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est.</h5>
+    </section>
+    <section class="row bigtoppadding">
+    <div class="twelve columns">
+      <!-- you can change class from vimeo to youtube if you are using YT -->
+      <article class="vimeo video">
+      <iframe src="http://player.vimeo.com/video/50650297">
+      </iframe>
+      </article>
+    </div>
+    </section>
+  </div>
+  <!-- end showreel div -->
+  <!-- begin parallax twitter container -->
+  <!-- change twitter username in index.js located in js folder -->
+  <div class="image-4" data-stellar-background-ratio="0.5" id="twitter">
+    <div class="black-tint">
+      <section class="row">
+      <div class="two columns centered">
+        <!-- twitter icon link to your twitter profile -->
+        <div class="second-icon">
+          <i class="icon-twitter"></i>
+        </div>
+      </div>
+      <div id="tweets" class="ten columns centered">
+      </div>
+      </section>
+    </div>
+  </div>
+  <!-- end parallax twitter container -->
+  
+{% include 'contact' %}
+
+
+  <!-- begin footer -->
+  <footer>
+  <div class="black">
+    <section class="row contact-info">
+    <!-- 1st widget -->
+    <div class="four columns">
+      <h6>COME MEET US</h6>
+      <h5>
+      786 Some Place Nice, Rd Nice<br>
+       State, Big Country 7860 </h5>
+    </div>
+    <!-- second widget -->
+    <div class="four columns">
+      <h6>CALL US TODAY</h6>
+      <h5>
+      <span>Tel: </span>+786 9876 543 210<br>
+      <span>Fax: </span>+786 8876 543 210 </h5>
+    </div>
+    <!-- third widget -->
+    <div class="four columns">
+      <h6>WRITE TO US</h6>
+      <h5 class="blue-text">
+      Enquire@yourdomain.com<br>
+       Support@yourdomain.com</h5>
+    </div>
+    </section>
+    <!-- begin vertical align row -->
+    <section class="row">
+    <div class="valign">
+    <!-- 50% width -->
+    <div class="half">
+      <h1 class="logo">EXPLORER</h1>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+      </p>
+    </div>
+    <!-- 50% width -->
+    <!-- add agency social media links -->
+    <div class="half">
+      <ul class="links">
+        <li><a href="#"><i class="icon-facebook"></i></a></li>
+        <li><a href="#"><i class="icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-github"></i></a></li>
+        <li><a href="#"><i class="icon-linkedin"></i></a></li>
+        <li><a href="#"><i class="icon-google-plus"></i></a></li>
+        <li><a href="#"><i class="icon-pinterest"></i></a></li>
+      </ul>
+    </div>
+    </div>
+    </section>
+  </div>
+  <!-- copyright -->
+  <div class="white">
+    <section class="row center">
+    <p class="grey-text">
+      © Explorer Template 2013. All rights reserved. Theme by CodeBlvck.
+    </p>
+    </section>
+  </div>
+  </footer>
+  <!-- end footer -->
+</div>
+
+
+
+
+
+<!-- Grab Google CDN's jQuery, fall back to local if offline -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{ 'jquery-1.9.1.min.js' | asset_url }}"><\/script>')</script>
+{{ 'gumby.min.js' | asset_url | script_tag }}
+
+<!-- our scripts -->
+{{ 'plugins.js' | asset_url | script_tag }}
+{{ 'main.js' | asset_url | script_tag }}
+{{ 'smoothscroll.js' | asset_url | script_tag }}
+
+<!-- home page only script -->
+{{ 'index.js' | asset_url | script_tag }}
+{{ 'ajax.js' | asset_url | script_tag }}
+
+<!-- Preloader script-->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            $("#status").fadeOut(); // will first fade out the loading animation
+            $("#preloader").delay(350).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
+})
+    //]]>
+</script>
+
+<!-- background slideshow -->
+
+{{ 'supersized.js' | asset_url | script_tag }}
+{{ 'slideshow.js' | asset_url | script_tag }}
