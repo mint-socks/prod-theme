@@ -50,177 +50,32 @@
     <section class="row midtoppadding">
     <!-- we use class=grid and id=project for our project listing -->
     <ul class="grid" id="projects">
+      {% assign collection = collections.frontpage %}
+      {% for product in collection.all_products %}
       <!-- project 
    remember to add your data-filter as class 
    -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
+        <li class="grid-item web-design">
+        <div class="grid-project">
+          <!-- ajax link -->
+          <a href="#!projects/project-1.html" class="open-slide">
+          <!-- project image -->
+          <div class="img-box">
+            <img src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="project">
+          </div>
+          <!-- project title and category -->
+          <div class="project-info">
+            <h1>PROJECT TITLE <span>01</span></h1>
+            <h6>Design &amp; Development</h6>
+          </div>
+          </a>
         </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>01</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
+        </li>
+      {% endfor %}
       <!-- project 
    remember to add your data-filter as class 
    -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>02</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>03</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>04</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>05</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>06</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>07</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>08</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      <li class="grid-item web-design">
-      <div class="grid-project">
-        <!-- ajax link -->
-        <a href="#!projects/project-1.html" class="open-slide">
-        <!-- project image -->
-        <div class="img-box">
-          <img src="preview/pre450.png" alt="project">
-        </div>
-        <!-- project title and category -->
-        <div class="project-info">
-          <h1>PROJECT TITLE <span>09</span></h1>
-          <h6>Design &amp; Development</h6>
-        </div>
-        </a>
-      </div>
-      </li>
+      
     </ul>
     <!-- end portfolio listings -->
     </section>
