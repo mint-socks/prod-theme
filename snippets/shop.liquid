@@ -1,0 +1,85 @@
+  <!-- begin work section -->
+  <section id="work">
+  <div class="white">
+    <!-- section heading -->
+    <section class="row heading">
+    <h1><span>SOME OF OUR</span> BEST WORKS</h1>
+    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac augue at erat hendrerit dictum. Praesent porta, purus eget sagittis imperdiet, nulla mi ullamcorper metus, id hendrerit metus diam vitae est.</h5>
+    </section>
+    <!-- portfolio filters -->
+    <!-- replace data filters for your project categories
+  *remember to add your filters as classes to your projects for filters to work -->
+    <section id="options" class="row midbottompadding">
+    <ul id="filters" class="option-set">
+      <li><a href="#" data-filter="*" class="selected">Show All</a></li>
+      <li><a href="#" data-filter=".motion">Motion</a></li>
+      <li><a href="#" data-filter=".web-design">Web Design</a></li>
+      <li><a href="#" data-filter=".photography">Photography</a></li>
+    </ul>
+    </section>
+    <!-- project details container 
+   YOU DO NOT NEED TO EDIT ANYTHING HERE 
+   -->
+    <div id="ajax-section">
+      <div class="clearfix">
+        <!-- PROJECT NAVIGATION AND CLOSE BUTTON -->
+        <section class="row">
+        <div id="ajax-nav">
+          <ul>
+            <li id="prevProject"><a href="#"><i class="icon-chevron-left"></i></a></li>
+            <li id="nextProject"><a href="#"><i class="icon-chevron-right"></i></a></li>
+            <li id="closeProject"><a href="#work"><i class="icon-remove"></i></a></li>
+          </ul>
+        </div>
+        <!-- END PROJECT NAVIGATION AND CLOSE BUTTON -->
+        </section>
+        <div id="loader">
+        </div>
+        <!-- PROJECT WILL LOSE INSIDE 'AJAX-INSIDE' -->
+        <div id="ajax-outside">
+          <div id="ajax-inside">
+          </div>
+        </div>
+        <!-- END AJAX CONTENT -->
+      </div>
+      <!-- END AJAX SECTION -->
+      <div class="clear">
+      </div>
+    </div>
+    <!-- BEGIN PORTFOLIO ROW-->
+    <section class="row midtoppadding">
+    <!-- we use class=grid and id=project for our project listing -->
+    <ul class="grid" id="projects">
+      {% assign collection = collections.frontpage %}
+      {% for product in collection.all_products %}
+      <!-- project 
+   remember to add your data-filter as class 
+   -->
+        <li class="grid-item web-design">
+        <div class="grid-project">
+          <!-- ajax link -->
+          <a href="#!projects/project-1.html" class="open-slide">
+          <!-- project image -->
+          <div class="img-box">
+            <img src="{{ product.featured_image.src | product_img_url: 'large' }}" alt="project">
+          </div>
+          <!-- project title and category -->
+          <div class="project-info">
+            <h1>PROJECT TITLE <span>01</span></h1>
+            <h6>Design &amp; Development</h6>
+          </div>
+          </a>
+        </div>
+        </li>
+      {% endfor %}
+      <!-- project 
+   remember to add your data-filter as class 
+   -->
+      
+    </ul>
+    <!-- end portfolio listings -->
+    </section>
+    <!-- END PORTFOLIO SECTION -->
+  </div>
+  </section>
+  <!-- end #work section -->
