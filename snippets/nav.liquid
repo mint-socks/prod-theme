@@ -3,15 +3,15 @@
     <a class="toggle" gumby-trigger="#navbar &gt; .row &gt; ul" href="#"><i class="icon-reorder"></i></a>
     <!-- change image source to your logo file 190px by 65px -->
     <div class="four columns logo">
-
+      <a href="/"> {{ 'logo.png' | asset_url | img_tag }} </a>
     </div>
     <!-- navigation -->
-      <ul class="eight columns" id="top-nav">
-        <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">HOME</a></li>
-        <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">SHOP</a></li>
-        <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">STORY</a></li>
-        <li><a href="#services" class="skip" gumby-goto="#services" gumby-duration="800" gumby-offset="-70">INSPIRATION</a></li>
-        <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">CONTACT</a></li>>
+      <ul class="seven columns" id="top-nav">
+        <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">home</a></li>
+        <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">shop</a></li>
+        <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">story</a></li>
+        <li><a href="#services" class="skip" gumby-goto="#services" gumby-duration="800" gumby-offset="-70">blog</a></li>
+        <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">contact</a></li>
       </ul>
     <!-- we use href attribute for li active class to work on different sections.
        we use gumby-goto for easing scroll to target sections -->
@@ -24,7 +24,7 @@
         <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">HOME</a></li>
         <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">SHOP</a></li>
         <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">STORY</a></li>
-        <li><a href="#services" class="skip" gumby-goto="#services" gumby-duration="800" gumby-offset="-70">INSPIRATION</a></li>
+        <li><a href="#services" class="skip" gumby-goto="#services" gumby-duration="800" gumby-offset="-70">BLOG</a></li>
         <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">CONTACT</a></li>
       </ul>
     </div>
