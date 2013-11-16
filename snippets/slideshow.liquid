@@ -1,5 +1,15 @@
   <!-- begin home/slideshow section -->
   <section id="home" class="slideshow">
+  <div class="lp-logo">
+    <a href="/">
+      <div class="tray">
+        {{ 'logo-tray.png' | asset_url | img_tag}}
+      </div>
+      <div class = "logolp">
+        {{ 'lplogo.png' | asset_url | img_tag }}
+      </div>
+    </a>
+  </div>
   <!-- begin header and navigation -->
   {% include 'nav' %}
   <!-- Slideshow Navigation -->
