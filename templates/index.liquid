@@ -15,6 +15,10 @@
 
   {{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
 
+
+  <!-- Wookmark CSS File -->
+  {{ 'wookmark.css' | asset_url | stylesheet_tag }}
+
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
 
   <style>
@@ -178,3 +182,41 @@
 
 <!-- END Explorer Template Files -->
 
+<!-- Wookmark JS Files/Code -->
+
+<!-- Include the imagesLoaded plug-in -->
+  {{ 'jquery.imagesloaded.js' | asset_url | script_tag }}
+
+  <!-- include colorbox -->
+  {{ 'jquery.colorbox-min.js' | asset_url | script_tag }}
+
+  <!-- Include the plug-in -->
+  {{ 'jquery.wookmark.js' | asset_url | script_tag }}
+
+  <!-- Once the page is loaded, initalize the plug-in. -->
+  <script type="text/javascript">
+    (function ($){
+      $('#tiles').imagesLoaded(function() {
+        // Prepare layout options.
+        var options = {
+          autoResize: true, // This will auto-update the layout when the browser window is resized.
+          container: $('#main'), // Optional, used for some extra CSS styling
+          offset: 2, // Optional, the distance between grid items
+          itemWidth: 210 // Optional, the width of a grid item
+        };
+
+        // Get a reference to your grid items.
+        var handler = $('#tiles li');
+
+        // Call the layout function.
+        handler.wookmark(options);
+
+        // Init lightbox
+        $('a', handler).colorbox({
+          rel: 'lightbox'
+        });
+      });
+    })(jQuery);
+  </script>
+
+<!-- END Wookmark JS Files/Code -->
