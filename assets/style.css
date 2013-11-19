@@ -78,7 +78,7 @@ color:#374152;
     left:0;
     right:0;
     bottom:0;
-    background-color:#ddd; /* change if the mask should have another color then #ddd */
+    background-color:#ffffff; /* change if the mask should have another color then #ddd */
     z-index:9999; /* makes sure it stays on top */
 }
 
