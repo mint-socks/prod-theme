@@ -78,7 +78,7 @@ color:#374152;
     left:0;
     right:0;
     bottom:0;
-    background-color:#ddd; /* change if the mask should have another color then #ddd */
+    background-color:#ffffff; /* change if the mask should have another color then #ddd */
     z-index:9999; /* makes sure it stays on top */
 }
 
@@ -2249,7 +2249,7 @@ background:#0099ff;
 	
 */
 
-	#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em; background:url(https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/progress.gif) no-repeat center center;}
+	#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em;}
 	
 	#supersized {  display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
 		#supersized img { width:auto !important; height:auto; position:relative; display:none; outline:none; border:none; max-width:inherit; }
