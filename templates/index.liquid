@@ -1,5 +1,8 @@
 <head>
 
+  <!--Loading Graphic Bouncing Ball-->
+  {{ 'loader-style.css' | asset_url | stylesheet_tag }}
+
   <!-- LPNav Files -->
   {{ 'demo.css' | asset_url | stylesheet_tag }}
   {{ 'style1.css' | asset_url | stylesheet_tag }}
@@ -19,8 +22,6 @@
   <!-- Wookmark CSS File -->
   {{ 'wookmark.css' | asset_url | stylesheet_tag }}
 
-  <!--Loading Graphic Bouncing Ball-->
-  {{ 'loader-style.css' | asset_url | stylesheet_tag }}
 
 
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
@@ -174,7 +175,7 @@
 <script type="text/javascript">
     //<![CDATA[
         $(window).load(function() { // makes sure the whole site is loaded
-            $("#preloader").delay(500).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
+            $("#preloader").delay(600).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
 })
     //]]>
 </script>
