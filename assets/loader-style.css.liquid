@@ -28,17 +28,12 @@
 	transform: scale(0);
 	cursor: pointer;
 }
-#mint {
-	background-image: url('../logo.png');
-	height:100px;
-	width:100px;
-}
 #ball {
 	width: 150px;
 	height: 140px;
 	border-radius: 70px;
 	background: rgb(255,255,255);
-	background-image: url('../logo2.png');
+	background-image: url('{{ 'loader-logo.png' | asset_url }}');
 	box-shadow: inset 0 -5px 15px rgba(255,255,255,0.4), 
 				inset -2px -1px 40px rgba(0,0,0,0.4), 
 				0 0 1px #000;	
