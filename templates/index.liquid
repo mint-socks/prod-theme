@@ -52,7 +52,6 @@
 
 </head>
 
-
 <div class="rte">
   {{ page.content }}
 </div>
@@ -63,6 +62,7 @@
     <div id="ballShadow"></div>     
   </div>
 </div>
+
 <!-- begin main container -->
 <div class="container main">
 
@@ -171,14 +171,6 @@
 {{ 'index.js' | asset_url | script_tag }}
 {{ 'ajax.js' | asset_url | script_tag }}
 
-<!-- Preloader script-->
-<script type="text/javascript">
-    //<![CDATA[
-        $(window).load(function() { // makes sure the whole site is loaded
-            $("#preloader").delay(600).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
-})
-    //]]>
-</script>
 
 <!-- background slideshow -->
 
@@ -225,3 +217,11 @@
   </script>
 
 <!-- END Wookmark JS Files/Code -->
+<!-- Preloader script-->
+<script type="text/javascript">
+    //<![CDATA[
+        $(window).load(function() { // makes sure the whole site is loaded
+            $("#preloader").delay(700).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
+})
+    //]]>
+</script>
