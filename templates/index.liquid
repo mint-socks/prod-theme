@@ -1,7 +1,5 @@
 <head>
 
-  <!--Loading Graphic Bouncing Ball-->
-  {{ 'loader-style.css' | asset_url | stylesheet_tag }}
 
   <!-- LPNav Files -->
   {{ 'demo.css' | asset_url | stylesheet_tag }}
@@ -51,17 +49,17 @@
   <!--END Explorer Template Files -->
 
 </head>
-
-<div class="rte">
-  {{ page.content }}
-</div>
-
 <div id="preloader">
   <div id="ballWrapper">
     <div id="ball"></div>
     <div id="ballShadow"></div>     
   </div>
 </div>
+
+<div class="rte">
+  {{ page.content }}
+</div>
+
 
 <!-- begin main container -->
 <div class="container main">
