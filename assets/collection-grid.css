@@ -249,7 +249,7 @@ a:hover {
 }
 
 .cbp-pgcontent {
-  border: 3px solid #47a3da;
+  border: 1px solid #b3b3b3;
   position: relative;
 }
 
@@ -261,8 +261,8 @@ a:hover {
   color: transparent;
   font-size: 0;
   z-index: 100;
-  border-bottom: 3px solid #47a3da;
-  border-left: 3px solid #47a3da;
+  border-bottom: 1px solid #b3b3b3;
+  border-left: 1px solid #b3b3b3;
   right: 0px;
   top: 0px;
   cursor: pointer;
@@ -272,12 +272,12 @@ a:hover {
 .cbp-pgrotate:before {
   font-size: 18px;
   line-height: 32px;
-  color: #47a3da;
+  color: #b3b3b3;
 }
 
 .no-touch .cbp-pgrotate:hover,
 .cbp-pgrotate.cbp-pgrotate-active {
-  background: #47a3da;
+  background: #b3b3b3;
 }
 
 .no-touch .cbp-pgrotate:hover:before,
