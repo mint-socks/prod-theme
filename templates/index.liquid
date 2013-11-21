@@ -21,6 +21,10 @@
   {{ 'wookmark.css' | asset_url | stylesheet_tag }}
 
 
+  <!-- Collection Plugin Files -->
+  {{ 'collection-grid.css' | asset_url | stylesheet_tag }}
+  {{ 'modernizr.custom.js' | asset_url | script_tag}}
+
 
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
 
@@ -218,6 +222,15 @@
   </script>
 
 <!-- END Wookmark JS Files/Code -->
+
+
+<!-- Collection Grid plugin -->
+  {{ 'cbpShop.min.js' | asset_url | script_tag }}
+  <script>
+    var shop = new cbpShop( document.getElementById( 'cbp-pgcontainer' ) ); 
+  </script>
+
+
 <!-- Preloader script-->
 <script type="text/javascript">
     //<![CDATA[
