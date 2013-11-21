@@ -240,7 +240,7 @@ a:hover {
   width: 50%;
   min-width: 340px;
   max-width: 555px;
-  padding: 20px 2% 50px 2%;
+  padding: 0;
   text-align: left;
 }
 
