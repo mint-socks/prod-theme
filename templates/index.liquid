@@ -1,33 +1,6 @@
 <head>
 
 
-  <!-- LPNav Files -->
-  {{ 'demo.css' | asset_url | stylesheet_tag }}
-  {{ 'style1.css' | asset_url | stylesheet_tag }}
-      <!--[if IE]>
-      <link rel="stylesheet" type="text/css" href="{{ 'styleIE.css' | asset_url }}" />
-      <![endif]-->
-
-  <!-- END LPNav Files -->
-
-  <!-- Explorer Template Files -->
-  {{ 'import.css' | asset_url | stylesheet_tag }}
-  {{ 'shutter.css' | asset_url | stylesheet_tag }}
-
-  {{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
-
-
-  <!-- Wookmark CSS File -->
-  {{ 'wookmark.css' | asset_url | stylesheet_tag }}
-
-
-  <!-- Collection Plugin Files -->
-  {{ 'collection-grid.css' | asset_url | stylesheet_tag }}
-  {{ 'modernizr.custom.js' | asset_url | script_tag}}
-
-
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
-
   <style>
     .image-1{
     background-image:url({{ 'inspiration.jpg' | asset_url }});
@@ -56,7 +29,7 @@
 <div id="preloader">
   <div id="ballWrapper">
     <div id="ball"></div>
-    <div id="ballShadow"></div>     
+    <div id="ballShadow"></div>
   </div>
 </div>
 
@@ -91,7 +64,7 @@
     </div>
   </div>
   <!-- end  quote/image parallax div -->
-  
+
 {% include 'contact' %}
 
 
@@ -137,7 +110,7 @@
       <ul class="links">
         <li><a href="#"><i class="icon-facebook"></i></a></li>
         <li><a href="#"><i class="icon-twitter"></i></a></li>
-        
+
         <li><a href="#"><i class="icon-instagram"></i></a></li>
         <li><a href="#"><i class="icon-tumblr"></i></a></li>
         <li><a href="#"><i class="icon-pinterest"></i></a></li>
@@ -150,7 +123,7 @@
   <div class="white">
     <section class="row center">
     <p class="grey-text">
-  
+
     </p>
     </section>
   </div>
@@ -227,7 +200,7 @@
 <!-- Collection Grid plugin -->
   {{ 'cbpShop.min.js' | asset_url | script_tag }}
   <script>
-    var shop = new cbpShop( document.getElementById( 'cbp-pgcontainer' ) ); 
+    var shop = new cbpShop( document.getElementById( 'cbp-pgcontainer' ) );
   </script>
 
 
@@ -235,7 +208,7 @@
 <script type="text/javascript">
     //<![CDATA[
         $(window).load(function() { // makes sure the whole site is loaded
-            $("#preloader").delay(700).fadeOut("slow"); // will fade out the grey DIV that covers the website.      
+            $("#preloader").delay(700).fadeOut("slow"); // will fade out the grey DIV that covers the website.
 })
     //]]>
 </script>

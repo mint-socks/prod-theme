@@ -237,8 +237,7 @@ a:hover {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  width: 50%;
-  min-width: 340px;
+  width: 20%;
   max-width: 555px;
   padding: 0;
   text-align: left;
@@ -249,7 +248,7 @@ a:hover {
 }
 
 .cbp-pgcontent {
-  border: 1px solid #b3b3b3;
+  border: none;
   position: relative;
 }
 
@@ -289,7 +288,7 @@ a:hover {
 .cbp-pgitem {
   width: 100%;
   position: relative;
-  padding: 2em;
+  padding-bottom: 50px;
   -webkit-perspective: 1400px;
   -moz-perspective: 1000px;
   perspective: 1000px;
@@ -308,7 +307,7 @@ a:hover {
   transition: transform .4s ease-out;
 }
 
-/* If you want to rotate on hover instead of click, you could use something like this: 
+/* If you want to rotate on hover instead of click, you could use something like this:
 .cbp-pgrotate:hover + .cbp-pgitem .cbp-pgitem-flip
 */
 .cbp-pgitem.cbp-pgitem-showback .cbp-pgitem-flip {
@@ -384,7 +383,7 @@ a:hover {
 
 .cbp-pgoptions > li:first-child {
   border-left: none;
-} 
+}
 
 .no-touch .cbp-pgoptions li {
   color: #47a3da;
@@ -425,8 +424,8 @@ a:hover {
 }
 
 /* Icons */
-.cbp-pgoptcompare, 
-.cbp-pgoptcart, 
+.cbp-pgoptcompare,
+.cbp-pgoptcart,
 .cbp-pgoptfav,
 .cbp-pgrotate {
   font-family: 'pgicons';

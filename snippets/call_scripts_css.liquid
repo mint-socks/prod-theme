@@ -1,0 +1,29 @@
+<head>
+
+  <!-- LPNav Files -->
+  {{ 'demo.css' | asset_url | stylesheet_tag }}
+  {{ 'style1.css' | asset_url | stylesheet_tag }}
+      <!--[if IE]>
+      <link rel="stylesheet" type="text/css" href="{{ 'styleIE.css' | asset_url }}" />
+      <![endif]-->
+
+  <!-- END LPNav Files -->
+
+  <!-- Explorer Template Files -->
+  {{ 'import.css' | asset_url | stylesheet_tag }}
+  {{ 'shutter.css' | asset_url | stylesheet_tag }}
+
+  {{ 'modernizr-2.6.2.min.js' | asset_url | script_tag }}
+
+
+  <!-- Wookmark CSS File -->
+  {{ 'wookmark.css' | asset_url | stylesheet_tag }}
+
+
+  <!-- Collection Plugin Files -->
+  {{ 'collection-grid.css' | asset_url | stylesheet_tag }}
+  {{ 'modernizr.custom.js' | asset_url | script_tag}}
+
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
+</head>

@@ -1,29 +1,126 @@
-{% comment %}
-Important notes about pagination:
-- Never access collection.products before the opening paginate tag.
-- Never paginate by more than 50.
-{% endcomment %}
+    <head>
+    {{ "collection-style.css" | asset_url | stylesheet_tag }}
+    <link href='http://fonts.googleapis.com/css?family=Dosis:200,400,700' rel='stylesheet' type='text/css'>
+    {{ 'modernizr.custom.79639.js' | asset_url | script_tag }}
+    <noscript>{{ 'noscript.css' | asset_url | stylesheet_tag }}</noscript>
+    {{ 'normalize.css' | asset_url | stylesheet_tag }}
 
-{% paginate collection.products by 6 %}
+    </head>
+    <body>
 
-{% comment %}
-Re-use the 'rte' class wherever you output content that was added by a merchant using
-the Rich Text Editor ( 'rte' stands for rich text editor ).
-Style all HTML elements in that content the same way across the board.
-Use the 'rte' class in your CSS to help maintain that consistency.
-Example: the h2 element should have the same size and color in:
-- product descriptions
-- collection descriptions
-- 'page' pages' content
-- blog post
-{% endcomment %}
+<div id="navbar-sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 70px;"><header class="navbar" id="navbar" style="position: fixed; top: 0px; display: block;">
+  <div class="row">
+    <a class="toggle" gumby-trigger="#navbar &gt; .row &gt; ul" href="#"><i class="icon-reorder"></i></a>
+    <!-- change image source to your logo file 190px by 65px -->
+    <div class="four columns logo">
+      <a href="/"> <img src="//cdn.shopify.com/s/files/1/0289/9509/t/1/assets/logo.png?2675" alt=""> </a>
+    </div>
+    <!-- navigation -->
+      <ul class="seven columns" id="top-nav">
+        <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">home</a></li>
+        <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">shop</a></li>
+        <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">story</a></li>
+        <li><a href="" target="_blank">blog</a></li>
+        <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">contact</a></li>
+      </ul>
+    <!-- we use href attribute for li active class to work on different sections.
+       we use gumby-goto for easing scroll to target sections -->
+  </div>
 
-<h1>{{ collection.title }}</h1>
+  </header></div>
+
+    <section id="ps-container" class="ps-container">
+
+      <div class="ps-header">
+        <h1>Vertical Showcase Slider</h1>
+      </div><!-- /ps-header -->
+
+      <div class="ps-contentwrapper">
+
+        <div class="ps-content">
+          <h2>Bernhard</h2>
+          <span class="ps-price">£100</span>
+          <p>With restful springiness in the seat; prevents static sitting and provides enhanced seating comfort. Padded seat and back for enhanced seating comfort. Soft, hardwearing and easy care leather, which ages gracefully.</p>
+          <a href="http://www.ikea.com/gb/en/catalog/products/80163804/#/60203882">Buy this item</a>
+        </div>
+
+        <div class="ps-content">
+          <h2>Tobias</h2>
+          <span class="ps-price">£65</span>
+          <p>For increased stability, re-tighten the screws about two weeks after assembly. Seat and back with restful flexibility; prevents a static sitting posture and enhances comfort.</p>
+          <a href="http://www.ikea.com/gb/en/catalog/products/90185320/#/20115038">Buy this item</a>
+        </div>
+
+        <div class="ps-content">
+          <h2>Pöang</h2>
+          <span class="ps-price">£140</span>
+          <p>Frame made of layer-glued bent birch; a very strong and durable material. High back provides great support for your neck. Sheepskin has natural insulating properties, which make it feel warm and cosy to sit on. Extra cushions are available for variation and renewal.</p>
+          <a href="http://www.ikea.com/gb/en/catalog/products/S79889694/#/S59901017">Buy this item</a>
+        </div>
+
+        <div class="ps-content">
+          <h2>Mellby</h2>
+          <span class="ps-price">£195</span>
+          <p>Easy to keep clean; removable, machine washable cover. Seat cushion with a top layer of memory foam; moulds to the precise contours of your body and regains its shape when you get up.</p>
+          <a href="http://www.ikea.com/gb/en/catalog/products/S99895000/#/S69894380">Buy this item</a>
+        </div>
+
+        <div class="ps-content">
+          <h2>Torbjörn</h2>
+          <span class="ps-price">£30</span>
+          <p>Height adjustable for a comfortable sitting posture. The sloping seat gives a comfortable sitting position when leaning forwards.</p>
+          <a href="http://www.ikea.com/gb/en/catalog/products/70224756/">Buy this item</a>
+        </div>
+
+      </div><!-- /ps-contentwrapper -->
+
+      <div class="ps-slidewrapper">
+
+        <div class="ps-slides">
+          {% for product in collection.all_products %}
+          <div style="background-image:url({{ product.featured_image.src | product_img_url: 'large' }});"></div>
+          {% endfor %}
+        </div>
+
+
+
+
+
+{%comment%}
+            <li>
+              <div class="cbp-pgcontent">
+                <div class="cbp-pgitem">
+                  <div class="cbp-pgitem-flip">
+                    <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
+                    <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
+                  </div>
+                </div><!-- /cbp-pgitem -->
+              </div><!-- cbp-pgcontent -->
+            </li>
+{%endcomment%}
+
+
+        <nav>
+          <a href="#" class="ps-prev" ></a>
+          <a href="#" class="ps-next" ></a>
+        </nav>
+
+      </div><!-- /ps-slidewrapper -->
+
+    </section><!-- /ps-container -->
+
+    <!-- jQuery if needed -->
+
+
+
+{%comment%}
+
+<div class="container main">
 
 {% comment %}
 Listing all tags within the current collection.
 Shopify uses product tags to manage subcategories inside collections.
-See 'How do I create subcategories of products?' at 
+See 'How do I create subcategories of products?' at
 http://support.shopify.com/customer/portal/articles/75425 for details.
 {% endcomment %}
 {% if collection.all_tags.size > 0 %}
@@ -45,7 +142,7 @@ so in comparisons we need to escape type and vendor.
     {% elsif vendor_escaped == collection.title %}
     <a href="{{ collection.products.first.vendor | url_for_vendor }}">All</a>
     {% endif %}
-  </li> 
+  </li>
   {% for tag in collection.all_tags %}
   {% if current_tags contains tag %}
   <li class="active">
@@ -56,7 +153,7 @@ so in comparisons we need to escape type and vendor.
     {{ tag | link_to_tag: tag }}
   </li>
   {% endif %}
-  {% endfor %}  
+  {% endfor %}
 </ul>
 {% endif %}
 
@@ -74,10 +171,14 @@ so in comparisons we need to escape type and vendor.
 {% endfor %}
 </ul>
 
-{% if paginate.pages > 1 %}
-<div id="pagination">
-  {{ paginate | default_pagination }}
+{%endcomment%}
 </div>
-{% endif %}
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    {{ 'slider.js' | asset_url | script_tag }}
+    <script type="text/javascript">
+      $(function() {
 
-{% endpaginate %}
+        Slider.init();
+
+      });
+    </script>
