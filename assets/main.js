@@ -35,7 +35,7 @@ $("#navbar").sticky({topSpacing:0});
 =========================*/
 $.stellar({
 horizontalScrolling: false,
-verticalOffset: -40		
+verticalOffset: -40
 });
 
 
