@@ -22,7 +22,7 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 body {
   font-family: 'Lato', Calibri, Arial, sans-serif;
-  color: #47a3da;
+  color: #3d4c4f;
 }
 
 a {
@@ -400,7 +400,7 @@ a:hover {
   line-height: 60px;
   text-indent: 0;
   text-align: center;
-  color: #47a3da;
+  color: #3d4c4f;
 }
 
 .no-touch .cbp-pgoptions li:hover:before,
@@ -651,11 +651,16 @@ a:hover {
 
 @media screen and (max-width: 68.125em) {
   .cbp-pggrid > li {
-    width: 48%;
+    width: 33%;
   }
 }
 
 @media screen and (max-width: 46.125em) {
+  .cbp-pggrid > li {
+    width: 50%;
+  }
+
+@media screen and (max-width: 30.125em) {
   .cbp-pggrid > li {
     width: 100%;
   }

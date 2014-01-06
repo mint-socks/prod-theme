@@ -8,8 +8,8 @@
     <!-- portfolio filters -->
     <!-- replace data filters for your project categories
   *remember to add your filters as classes to your projects for filters to work -->
-    <!-- project details container 
-   YOU DO NOT NEED TO EDIT ANYTHING HERE 
+    <!-- project details container
+   YOU DO NOT NEED TO EDIT ANYTHING HERE
    -->
     <div id="ajax-section">
       <div class="clearfix">
@@ -47,6 +47,11 @@
           {% for product in collection.all_products %}
             <li>
               <div class="cbp-pgcontent">
+                <div class="prod-detail">
+                  {{ product.title }}
+                  <br><br>
+                  {{ product.price }}
+                </div>
                 <div class="cbp-pgitem">
                   <div class="cbp-pgitem-flip">
                     <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
@@ -56,10 +61,10 @@
               </div><!-- cbp-pgcontent -->
             </li>
       {% endfor %}
-      <!-- project 
-   remember to add your data-filter as class 
+      <!-- project
+   remember to add your data-filter as class
    -->
-      
+
     </ul>
     <!-- end portfolio listings -->
     </section>
