@@ -46,33 +46,43 @@
           {% assign collection = collections.frontpage %}
           {% for product in collection.all_products %}
             <li>
-              <div class="cbp-pgcontent">
+              <a class="toggle" href="#" gumby-trigger="#drawer{{product.id}}|.drawer{{product.id}}">
+                <div class="cbp-pgcontent">
 
-                <div class="prod-detail">
-                  {{ product.title }}
-                  <br><br>
-                  {{ product.price }}
-                </div>
-
-                <div class="cbp-pgitem">
-                  <div class="cbp-pgitem-flip">
-                    <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
-                    <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
+                  <div class="prod-detail">
+                    {{ product.title }}
+                    <br><br>
+                    {{ product.price }}
                   </div>
-                <div class="prod-expand-detail">
-                  <div class="row">
-                    <div class="six columns">
-                      {{ product.featured_image.src | product_img_url: 'large' | img_tag }}
+
+                  <div class="cbp-pgitem">
+                    <div class="cbp-pgitem-flip">
+                      <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
+                      <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
                     </div>
 
-                    <div class="six columns">
-                      <p>what's up</p>
+
+                    <div class="prod-expand-detail drawer" id="drawer{{ product.id }}">
+                      <div class="row">
+
+                        <div class="six columns">
+                          {{ product.featured_image.src | product_img_url: 'large' | img_tag }}
+                        </div>
+
+                        <div class="six columns">
+                          what's up
+                        </div>
+
+                      </div>
                     </div>
+
+                    <div class="drawer" id="drawer2">
+                    </div>
+
                   </div>
-                </div>
-                </div>
-                <!-- /cbp-pgitem -->
-              </div><!-- cbp-pgcontent -->
+                  <!-- /cbp-pgitem -->
+                </div><!-- cbp-pgcontent -->
+              </a>
             </li>
       {% endfor %}
       <!-- project
