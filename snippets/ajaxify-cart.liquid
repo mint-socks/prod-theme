@@ -1,0 +1,115 @@
+<script>
+
+/**
+ * Module to ajaxify all add to cart forms on the page.
+ *
+ * Copyright (c) 2013 Caroline Schnapp (11heavens.com)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ */
+Shopify.AjaxifyCart = (function($) {
+  var _config = {
+    addedToCartBtnLabel: 'Thank you!',
+    addingToCartBtnLabel: 'Adding...',
+    soldOutBtnLabel: 'Sold Out',
+    howLongTillBtnReturnsToNormal: 2000, // in milliseconds.
+    cartCountSelector: '.item_count',
+    cartTotalSelector: '#cart-price',
+    feedbackPosition:'nextButton', // 'aboveForm' for top of add to cart form, 'belowForm' for below the add to cart form, and 'nextButton' for next to add to cart button.
+    shopifyAjaxAddURL: '/cart/add.js',
+    shopifyAjaxCartURL: '/cart.js'
+  };
+  var _showFeedback = function(success, html, addToCartForm) {
+    $('.ajaxified-cart-feedback').remove();
+    var feedback = '<p style="margin:20px 0" class="ajaxified-cart-feedback ' + success + '">' + html + '</p>';
+    switch (_config.feedbackPosition) {
+      case 'aboveForm':
+        addToCartForm.before(feedback).css('clear','both').slideDown();
+        break;
+      case 'belowForm':
+        addToCartForm.after(feedback).css('clear','both').slideDown();
+        break;
+      case 'nextButton':
+      default:
+        addToCartForm.find('input[type="submit"]').after(feedback).css('clear','both').slideDown();
+        break;
+    }
+  };
+  var _init = function() {
+    $(document).ready(function() {
+      $('form[action="/cart/add"]').submit(function(e) {
+        e.preventDefault();
+        var addToCartForm = $(this);
+        // Disable add to cart button.
+        var addToCartBtn = addToCartForm.find('input[type="submit"]');
+        addToCartBtn.attr('data-label', addToCartBtn.val());
+        addToCartBtn.val(_config.addingToCartBtnLabel).addClass('disabled').attr('disabled', 'disabled');
+        // Add to cart.
+        $.ajax({
+          url: _config.shopifyAjaxAddURL,
+          dataType: 'json',
+          type: 'post',
+          data: addToCartForm.serialize(),
+          success: function(itemData) {
+            // Re-enable add to cart button.
+            addToCartBtn.addClass('inverted').val(_config.addedToCartBtnLabel);
+            _showFeedback('success','✔ Added to Bag!',addToCartForm);
+            window.setTimeout(function(){
+              addToCartBtn.removeAttr('disabled').removeClass('disabled').removeClass('inverted').val(addToCartBtn.attr('data-label'));
+            }, _config.howLongTillBtnReturnsToNormal);
+            // Update cart count and show cart link.
+            $.getJSON(_config.shopifyAjaxCartURL, function(cart) {
+                $(_config.cartCountSelector).html('<p class="cart-items">'+cart.item_count+'</p>');
+                $("#cart-prev").show(500).delay(2000).fadeOut();
+                $('.prev-subtotal').html('$'+(cart.total_price/100.00).toFixed(2));
+                $('.list_items').append('<tr><td><img src="'+cart.items[0].image.replace('fr.jpg','fr_thumb.jpg').replace('fl.jpg','fl_thumb.jpg').replace('f.jpg','f_thumb.jpg')+'">'+cart.items[0].title+'</td><td class="total-value">$'+(cart.items[0].price/100).toFixed(2)+'</td></tr>')
+            });
+          },
+          error: function(XMLHttpRequest) {
+            // Re-enable add to cart button.
+            addToCartBtn.removeAttr('disabled').removeClass('disabled');
+            // Changing the label to Sold Out.
+            addToCartBtn.val(soldOutBtnLabel);
+            // Re-disable add to cart button.
+            addToCartBtn.attr('disabled','disabled').addClass('disabled');
+            // Show error message in alert.
+            var data = eval('(' + XMLHttpRequest.responseText + ')');
+            if (!!data.message) {
+              _showFeedback('error',data.message + '(' + data.status  + '): ' + data.description, addToCartForm);
+            } else {
+              var fullMessages = [];
+              $.each(data, function(attribute, messages) {
+                $.each(messages, function(index, message) {
+                  fullMessages.push(attribute + ' ' + message);
+                });
+              });
+              _showFeedback('error','Error : ' + fullMessages.join('; ') + '.',addToCartForm);
+            }
+          }
+        });
+        return false;
+      });
+    });
+  };
+  return {
+    init: function(params) {
+        // Configuration
+        params = params || {};
+        // Merging with defaults.
+        $.extend(_config, params);
+        // Action
+        $(function() {
+          _init();
+        });
+    },
+    getConfig: function() {
+      return _config;
+    }
+  }
+})(jQuery);
+
+Shopify.AjaxifyCart.init();
+
+</script>

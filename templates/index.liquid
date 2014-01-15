@@ -1,35 +1,7 @@
-<head>
-
-
-  <style>
-    .image-1{
-    background-image:url({{ 'inspiration.jpg' | asset_url }});
-    background-size:cover;
-    background-attachment:fixed;
-    }
-    .image-2{
-    background-image:url({{ 'pre1300.png' | asset_url }});
-    background-size:cover;
-    background-attachment:fixed;
-    }
-    .image-3{
-    background-image:url({{ 'pre1300.png' | asset_url }});
-    background-size:cover;
-    background-attachment:fixed;
-    }
-    .image-4{
-    background-image:url({{ 'pre1300.png' | asset_url }});
-    background-size:cover;
-    background-attachment:fixed;
-    }
-  </style>
-  <!--END Explorer Template Files -->
-
-</head>
 <div id="preloader">
   <div id="ballWrapper">
-    <div id="ball"></div>
-    <div id="ballShadow"></div>
+    {{'loading.png' | asset_url | img_tag }}
+    <center><p>Loading...</p></center>
   </div>
 </div>
 
@@ -38,97 +10,24 @@
 </div>
 
 
-<!-- begin main container -->
 <div class="container main">
 
 {% include 'slideshow' %}
 
-  <!-- end slideshow section -->
-
-
-
 {% include 'shop' %}
+
+{% include 'cart-prev' %}
 
 {% include 'about' %}
 
-  <!-- quote parallax image section 3 -->
-  <div class="image-3" data-stellar-background-ratio="0.5">
-    <div class="black-tint">
-      <!-- QUOTE -->
-      <section class="row heading center bigpadding">
-      <h4 class="ten columns centered">“Art is an evolutionary act. The shape of art and its role in society is constantly changing. At no point is art static. There are no rules.” ― <i> Raymond Salvatore Harmon, BOMB: A Manifesto of Art Terrorism</i></h4>
+{% include 'quote' %}
 
-      <h4 class="ten columns centered">“Graffiti is one of the few tools you have if you have almost nothing.” ― <i>Banksy, Banging Your Head Against a Brick Wall</i></h4>
-
-      </section>
-    </div>
-  </div>
-  <!-- end  quote/image parallax div -->
+{% include 'blog' %}
 
 {% include 'contact' %}
 
+{% include 'footer' %}
 
-  <!-- begin footer -->
-  <footer>
-  <div class="black">
-    <section class="row contact-info">
-    <!-- 1st widget -->
-    <div class="four columns">
-      <h6>COME MEET US</h6>
-      <h5>
-      43 Rosenbrook Drive, <br>
-       Lincoln Park, NJ 07035 </h5>
-    </div>
-    <!-- second widget -->
-    <div class="four columns">
-      <h6>CALL US TODAY</h6>
-      <h5>
-      <span>Tel: </span>+800 779 2660<br>
-      <span>Fax: </span>+646 283 2990</h5>
-    </div>
-    <!-- third widget -->
-    <div class="four columns">
-      <h6>WRITE TO US</h6>
-      <h5 class="blue-text">
-      info@mintsocks.com<br>
-      wholesale@mintsocks.com</h5>
-    </div>
-    </section>
-    <!-- begin vertical align row -->
-    <section class="row">
-    <div class="valign">
-    <!-- 50% width -->
-    <div class="half">
-      <h1 class="logo">{{ 'logo.png' | asset_url | img_tag}}</h1>
-      <p>
-        Digitized, Urgbanized Streetart realized in the way you express yourself.
-      </p>
-    </div>
-    <!-- 50% width -->
-    <!-- add agency social media links -->
-    <div class="half">
-      <ul class="links">
-        <li><a href="#"><i class="icon-facebook"></i></a></li>
-        <li><a href="#"><i class="icon-twitter"></i></a></li>
-
-        <li><a href="#"><i class="icon-instagram"></i></a></li>
-        <li><a href="#"><i class="icon-tumblr"></i></a></li>
-        <li><a href="#"><i class="icon-pinterest"></i></a></li>
-      </ul>
-    </div>
-    </div>
-    </section>
-  </div>
-  <!-- copyright -->
-  <div class="white">
-    <section class="row center">
-    <p class="grey-text">
-
-    </p>
-    </section>
-  </div>
-  </footer>
-  <!-- end footer -->
 </div>
 
 
@@ -147,10 +46,6 @@
 {{ 'plugins.js' | asset_url | script_tag }}
 {{ 'main.js' | asset_url | script_tag }}
 {{ 'smoothscroll.js' | asset_url | script_tag }}
-
-<!-- home page only script -->
-{{ 'index.js' | asset_url | script_tag }}
-{{ 'ajax.js' | asset_url | script_tag }}
 
 
 <!-- background slideshow -->
@@ -211,7 +106,7 @@
 <script type="text/javascript">
     //<![CDATA[
         $(window).load(function() { // makes sure the whole site is loaded
-            $("#preloader").delay(700).fadeOut("slow"); // will fade out the grey DIV that covers the website.
+            $("#preloader").fadeOut("slow"); // will fade out the grey DIV that covers the website.
 })
     //]]>
 </script>

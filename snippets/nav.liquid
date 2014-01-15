@@ -1,31 +1,16 @@
 
-  <header class="navbar" id="navbar">
-  <div class="row">
-    <a class="toggle" gumby-trigger="#navbar &gt; .row &gt; ul" href="#"><i class="icon-reorder"></i></a>
-    <!-- change image source to your logo file 190px by 65px -->
-    <div class="four columns logo">
-      <a href="/"> {{ 'logo.png' | asset_url | img_tag }} </a>
-    </div>
-    <!-- navigation -->
-      <ul class="seven columns" id="top-nav">
-        <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">home</a></li>
-        <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">shop</a></li>
-        <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">story</a></li>
-        <li><a href="" target="_blank">blog</a></li>
-        <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">contact</a></li>
-      </ul>
-    <!-- we use href attribute for li active class to work on different sections.
-       we use gumby-goto for easing scroll to target sections -->
-  </div>
+{% include 'main-nav' %}
 
-  </header>
-    <div class="content lpnav">
-
+    <div class="content lpnav row">
+      <div class="push_three four columns">
       <ul class="bmenu">
-        <li class="active"><a href="#home" class="skip" gumby-goto="#home" gumby-duration="800">HOME</a></li>
         <li><a href="#work" class="skip" gumby-goto="#work" gumby-duration="800" gumby-offset="-70">SHOP</a></li>
         <li><a href="#about" class="skip" gumby-goto="#about" gumby-duration="800" gumby-offset="-70">STORY</a></li>
-        <li><a href="http://mintsocksrock.tumblr.com/" target="_blank">BLOG</a></li>
+
+        <li><a href="#blog" class="skip" gumby-goto="#blog" gumby-duration="800" gumby-offset="-70">BLOG</a></li>
+
+        <!-- <li><a class="blog-link" href="#">BLOG</a></li> -->
         <li><a href="#contact" class="skip" gumby-goto="#contact" gumby-duration="800" gumby-offset="-70">CONTACT</a></li>
       </ul>
+      </div>
     </div>

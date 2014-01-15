@@ -1,5 +1,154 @@
+
+
 @charset "UTF-8";
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,600italic);
+#logo {
+  margin-top:10px;
+  height: 150px; /* Replace with height of your logo file */
+   background: url({{ 'lplogo.png' | asset_url | replace: 'http://','https://' }}) center no-repeat;
+}
+
+/* Center-align the subtitle */
+#tagline {
+  text-align: center;
+
+}
+#tagline .subtitle {
+  color: {{ settings.title_color }};
+}
+
+/* Hide the name of the store because we got this nifty logo now */
+#tagline .title {
+  display: none;
+}
+
+
+html body {
+  background: #fff;
+
+}
+
+#header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: none;
+}
+
+#header h1 {
+  font-size: 48px;
+  line-height: 48px;
+  color: {{ settings.title_color }};
+}
+#tagline{
+  display:none;
+}
+.subtitle{
+  display:none;
+}
+#main {
+  background: none;
+}
+
+#footer {
+  background: none;
+}
+
+#content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+#container.slim #header,
+#container.slim #main,
+#container.slim #footer {
+  background: none;
+}
+
+#overview,
+#email,
+#addresses,
+#buttons,
+.group {
+  background: #fff;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+#thumbs div {
+  border: none;
+}
+
+body {
+
+  color: {{ settings.text_color }};
+}
+.group h3, .pgroup h3,
+#overview h2,
+h4.active-customer {
+  color: {{ settings.title_color }};
+  text-shadow: none;
+}
+a {
+  color: {{ settings.link_color }};
+}
+a:hover {
+  color: {{ settings.link_hover }};
+}
+h3 {
+  color: {{ settings.title_color }};
+  text-shadow: none;
+}
+
+#thumbs span,
+#thumbs h3 span {
+  color: {{ settings.text_accent_color }};
+}
+#products {
+  border: none;
+}
+
+
+#overview .hint {
+  color: {{ settings.text_accent_color }};
+}
+#cost, #order-num {
+  text-shadow: none;
+  color: {{ settings.text_accent_color }};
+}
+#steps {
+  font-style: normal;
+}
+
+
+#buttons #commit-button,
+#buttons #complete-purchase {
+  background: {{ settings.text_accent_color }};
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  font-size: 18px;
+  line-height: 16px;
+  font-family: {{ settings.rectangle_font }};
+  color: {{ settings.text_over_accent }};
+  padding: 10px 6px 10px 6px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  border: none;
+  text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  margin-right: 10px;
+}
+#buttons #commit-button:hover,
+#buttons #complete-purchase:hover {
+  color: {{ settings.text_over_accent }};
+  background: #3dffbd;
+}
+
+
 /*
 * Gumby Framework Version 2.0
 * ---------------------------
@@ -729,3 +878,4 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 .modal, .modal > .content { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; }
 .modal.active { z-index: 999999; }
 .modal.active, .modal.active > .content { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100); opacity: 1; }
+
