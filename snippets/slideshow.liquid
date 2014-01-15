@@ -1,14 +1,17 @@
   <!-- begin home/slideshow section -->
   <section id="home" class="slideshow">
-  <div class="lp-logo">
-    <a href="/">
-      <div class="tray-lp">
-        {{ 'logo-tray.png' | asset_url | img_tag}}
-      </div>
-      <div class = "logolp">
-        {{ 'lplogo.png' | asset_url | img_tag }}
-      </div>
-    </a>
+
+  <div class="lp-logo row">
+    <div class="push_one two columns">
+      <a href="/">
+        <div class="tray-lp">
+          {{ 'logo-tray.png' | asset_url | img_tag}}
+        </div>
+        <div class = "logolp">
+          {{ 'lplogo.png' | asset_url | img_tag }}
+        </div>
+      </a>
+    </div>
   </div>
   <!-- begin header and navigation -->
   {% include 'nav' %}

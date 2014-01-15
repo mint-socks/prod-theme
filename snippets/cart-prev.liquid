@@ -1,0 +1,24 @@
+<div id="cart-prev">
+  <table>
+      <tr class="subtotal-heading">
+        <td>Subtotal</td>
+        <td class="final-total prev-subtotal">{{cart.total_price|money}}</td>
+      </tr>
+    <tbody class="list_items">
+      {% for item in cart.items %}
+        <tr>
+          <td>
+            <img src="{{ item.product.featured_image.src | product_img_url: 'thumb' }}"/>
+            {{item.product.title}}
+          </td>
+          <td class="total-value">
+            {{ item.line_price | money }}
+          </td>
+        </tr>
+     {% endfor %}
+    </tbody>
+
+
+  </table>
+
+</div>

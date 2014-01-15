@@ -1,69 +1,86 @@
-  <!-- begin work section -->
-  <section id="work">
+<section id="work">
   <div class="white">
-    <!-- section heading -->
-    <section class="row heading">
-    <h2>Shop Mints</h2>
-    </section>
-    <!-- portfolio filters -->
-    <!-- replace data filters for your project categories
-  *remember to add your filters as classes to your projects for filters to work -->
-    <!-- project details container 
-   YOU DO NOT NEED TO EDIT ANYTHING HERE 
-   -->
-    <div id="ajax-section">
-      <div class="clearfix">
-        <!-- PROJECT NAVIGATION AND CLOSE BUTTON -->
-        <section class="row">
-        <div id="ajax-nav">
-          <ul>
-            <li id="prevProject"><a href="#"><i class="icon-chevron-left"></i></a></li>
-            <li id="nextProject"><a href="#"><i class="icon-chevron-right"></i></a></li>
-            <li id="closeProject"><a href="#work"><i class="icon-remove"></i></a></li>
-          </ul>
-        </div>
-        <!-- END PROJECT NAVIGATION AND CLOSE BUTTON -->
-        </section>
-        <div id="loader">
-        </div>
-        <!-- PROJECT WILL LOSE INSIDE 'AJAX-INSIDE' -->
-        <div id="ajax-outside">
-          <div id="ajax-inside">
-          </div>
-        </div>
-        <!-- END AJAX CONTENT -->
-      </div>
-      <!-- END AJAX SECTION -->
-      <div class="clear">
-      </div>
-    </div>
-    <!-- BEGIN PORTFOLIO ROW-->
     <section class="row midtoppadding">
 
-    <!--START COLLECTION GIRD -->
       <div id="cbp-pgcontainer" class="cbp-pgcontainer">
+
         <ul class="cbp-pggrid">
           {% assign collection = collections.frontpage %}
+
           {% for product in collection.all_products %}
             <li>
-              <div class="cbp-pgcontent">
-                <div class="cbp-pgitem">
-                  <div class="cbp-pgitem-flip">
-                    <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
-                    <img src="{{ product.featured_image.src | product_img_url: 'master' }}" />
+              <a class="small-product" href="{{product.id}}">
+                <div class="cbp-pgcontent">
+                  <div class="prod-detail" id='prev-{{product.id}}'>
+                    <!-- {{ product.title }} -->
                   </div>
-                </div><!-- /cbp-pgitem -->
-              </div><!-- cbp-pgcontent -->
+                  <div class="cbp-pgitem">
+                    <div class="cbp-pgitem-flip">
+                      <img src="{{ product.featured_image.src | product_img_url: 'compact' }}" />
+                      <img src="{{ product.featured_image.src | product_img_url: 'compact' }}" />
+                    </div>
+                  </div>
+                </div>
+              </a>
             </li>
-      {% endfor %}
-      <!-- project 
-   remember to add your data-filter as class 
-   -->
-      
-    </ul>
-    <!-- end portfolio listings -->
+        {% endfor %}
+        </ul>
+      <div class="product-viewers">
+        {% assign collection = collections.frontpage %}
+        {% for product in collection.all_products %}
+
+          <div class="product-viewer row" id="{{product.id}}">
+
+            <div class="five columns">
+              <h4 class="product-title">{{product.title}}</h4>
+              {{ product.featured_image.src | product_img_url: 'large' | img_tag }}
+            </div>
+            <div class="six columns">
+              <form method="post" action="/cart/add" enctype="multipart/form-data" data-product-id="{{product.id}}">
+
+                {% for variant in product.variants %}
+                  <input type="hidden" name="id" value="{{ variant.id }}" />
+                {% endfor %}
+
+
+                <p class="price">{{ product.price | money }}</p>
+
+                <hr>
+
+                <div class="field">
+                  <div class="quantity-label">
+                    <p class="pd-label"> QUANTITY: </p>
+                  </div>
+                  <div class="shop-quantity">
+                    <input min="1" name="quantity" type="number" value="1" />
+                  </div>
+                </div>
+
+                <hr>
+
+                <p class="pd-label">INSPIRATION:</p>
+                <p class="product-desc">{{product.description}}</p>
+
+                <div class="add-cart-btn xlarge btn primary">
+                  <input type="submit" value="ADD TO BAG" id="add"/>
+                </div>
+
+              </form>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
     </section>
-    <!-- END PORTFOLIO SECTION -->
   </div>
-  </section>
-  <!-- end #work section -->
+</section>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+
+
+<div id="cart">
+  <div class="row">
+    <div class="four columns">
+      <h3> Your Shopping Bag </h3>
+    </div>
+  </div>
+
+
+  {% if cart.item_count > 0 %}
+
+    <form action="/cart" method="post">
+
+      <div class="row">
+
+        <div class="eight columns order-summary">
+          <table>
+            <thead>
+              <tr>
+                <th>item</th>
+                <th>qty</th>
+                <th>total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in cart.items %}
+
+              <tr>
+
+                <td>
+                  <div>
+                      <img src="{{ item.product.featured_image.src | product_img_url: 'small' }}"/>
+                    <p>{{item.title}}</p>
+                  </div>
+                </td>
+
+                <td>
+                    <div>
+                      <input class="xnarrow" name=updates[] id="updates_{{ item.variant.id }}" type="number" min="1" value="{{item.quantity}}"/><br>
+                      <input type="submit" class="update-q small btn primary default" value="Update" name="update" id="b_update"/>
+                    </div>
+                </td>
+
+                <td>
+                  {{ item.line_price | money }}
+                </td>
+
+                <td>
+                  <a href="/cart/change/{{ item.variant.id }}?quantity=0" style="margin:0">
+                    <i class="icon-trash"></i>
+                  </a>
+                </td>
+
+              </tr>
+
+              {%endfor%}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="four columns">
+          <div class="total">
+            <h2>ORDER SUMMARY</h2>
+            <table class="">
+              <tr>
+                <td>Items</td>
+                <td class="total-value">{{cart.total_price | money}}</td>
+              </tr>
+              <tr>
+                <td>Shipping</td>
+                <td class="total-value">FREE!</td>
+              </tr>
+              <tr>
+                <td>Order Total</td>
+                <td class="final-total">{{cart.total_price | money}}</td>
+              </tr>
+            </table>
+          </div>
+          <div class="cart-notes">
+            <textarea name="note" placeholder="Tell us about any special instructions">{{ cart.note }}</textarea>
+          </div>
+          <div class="cart-buttons">
+            <input type="submit" class="large btn primary small-btn" name="checkout" value="PROCEED TO CHECKOUT" />
+            <a href="/#work" class="large btn primary small-btn">CONTINUE SHOPPING</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  {%else%}
+    <div class="row">
+      <div class="six columns">
+        <h4> Your bag is empty! Check out our socks!</a></h4>
+        <div class="cart-buttons">
+          <a href="/#work" class="large btn primary small-btn">CONTINUE SHOPPING</a>
+        </div>
+      </div>
+    </div>
+
+  {%endif%}
+
+
+</div>

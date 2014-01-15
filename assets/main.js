@@ -30,12 +30,16 @@ $(document).ready(function() {
 =========================*/
 $("#navbar").sticky({topSpacing:0});
 
+/* sticky header
+=========================*/
+$("#navbar").sticky({topSpacing:0});
+
 
 /* parallax background
 =========================*/
 $.stellar({
 horizontalScrolling: false,
-verticalOffset: -40		
+verticalOffset: -40
 });
 
 

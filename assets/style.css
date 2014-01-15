@@ -1,8 +1,8 @@
 /*=======================================================================
-						  _           _         
+						  _           _
 						 / `_   _/_  /_)/  _  /_
-						/_,/_//_//_'/_)/|//_ /\ 
-                       								
+						/_,/_//_//_'/_)/|//_ /\
+
 *** WEBSITE DESIGNED AND DEVELOPED BY HASAN ALI - http://www.codeblvck.com ***
 ========================================================================*/
 /* ==
@@ -40,9 +40,13 @@ PLUGINS
 
 == */
 
-/* 
-' BASE  
+/*
+' BASE
 */
+
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
 
 html{
 height:100% !important;
@@ -236,7 +240,7 @@ margin-top: 100px !important;
 }
 
 
-/* 
+/*
 ' PAGE STYLES
 */
 
@@ -250,7 +254,7 @@ background:url(https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/stripes.pn
 
 .white{
 background:#fff;
-padding:50px 0px;
+padding:10px 0px;
 }
 
 footer .white, footer .black{
@@ -308,57 +312,59 @@ padding:75px 0px;
 }
 
 
-/* 
-' TEXT STLYES 
+/*
+' TEXT STLYES
 */
 
 
 h1{
-font-size:52px;
-font-size:3.25rem;
-font-weight:400;
+font-size:20px;
+
+font-weight:normal;
+
+
 }
 
 h1.large{
-font-weight:800;
-font-size:70px;
-font-size:4.375rem;
+font-weight:lighter;
+font-size:40px;
+font-size:3.375rem;
 padding-bottom:0px;
 }
 
 h2{
-font-size: 44px;
+font-size: 10px;
 font-size:2.75rem;
-font-weight:400; 
+font-weight:400;
 }
 
 h3{
-font-size:36px;
+font-size:10px;
 font-size:2.25rem;
 font-weight:400;
 }
 
 h4{
-font-size:30px;
+font-size:10px;
 font-size:1.875rem;
 font-weight:400;
 }
 
 h5{
-font-size:21px;
+font-size:10px;
 font-size:1.313rem;
 font-weight:400;
 line-height:32px;
 }
 
 h6{
-font-size:16px;
+font-size:10px;
 font-size:1rem;
 font-weight:400;
 line-height: 24px;
 }
 
-.black-tint h1, .black-tint h2, .black-tint h3, .black-tint h4, .black-tint h5, .black-tint h6, 
+.black-tint h1, .black-tint h2, .black-tint h3, .black-tint h4, .black-tint h5, .black-tint h6,
 .blue-tint h1, .blue-tint h2, .blue-tint h3, .blue-tint h4, .blue-tint h5, .blue-tint h6,
 .red-tint h1, .red-tint h2, .red-tint h3, .red-tint h4, .red-tint h5, .red-tint h6,
 .black h1, .black h2, .black h3, .black h4, .black h5, .black h6,
@@ -369,15 +375,15 @@ color:#fff;
 
 p{
 line-height: 1.575em;
-font-size:14px;
+font-size:12px;
 }
 
 p.dropcaps:first-letter {
-font-size: 65px;
+font-size: 15px;
 float: left;
 line-height: 50px;
 padding-right: 10px;
-font-family: inherit;
+font-family:;
 font-weight: 700;
 }
 
@@ -774,7 +780,7 @@ border-left:1px solid #ce0029 !important;
 }
 
 
-/* 
+/*
 ' ICONS
 */
 
@@ -821,7 +827,7 @@ top:0px !important;
 
          to {
         -webkit-transform: translate(0px,-10px);
-        }  
+        }
       }
 
 @-moz-keyframes hop {
@@ -832,7 +838,7 @@ top:0px !important;
 
          to {
         -moz-transform: translate(0px,-10px);
-        }  
+        }
       }
 
 
@@ -952,8 +958,8 @@ background: rgba(231, 255, 251,0);
 }
 
 
-/* 
-' SKILLS 
+/*
+' SKILLS
 */
 
 .skill-box {
@@ -1093,7 +1099,7 @@ border-radius:50%;
 
 
 
-/* 
+/*
 ' NAVBAR
 */
 
@@ -1577,8 +1583,8 @@ background:#0099ff;
 -o-transition-duration: 0.1s;
 }
 
-/* 
-' SERVICES 
+/*
+' SERVICES
 */
 
 
@@ -1687,8 +1693,8 @@ vertical-align:4px;
 background:#CC0029;
 }
 
-/* 
-' METHOD 
+/*
+' METHOD
 */
 
 ul.method {
@@ -1719,11 +1725,11 @@ margin-bottom: 10px;
 
 .black ul.method li{
 color:#fff;
-} 
+}
 
 .blue ul.method li{
 color:#fff;
-} 
+}
 
 .red ul.method li{
 color:#fff;
@@ -1769,8 +1775,8 @@ border: 3px solid rgba(255, 131, 151, 1);
 color: #FFFFFF;
 }
 
-/* 
-' CONTACT/FOOTER 
+/*
+' CONTACT/FOOTER
 */
 
 
@@ -1888,7 +1894,7 @@ color:#fff;
 }
 
 footer a i:hover{
-background:#0099ff;
+background:#19e6bf;
 color:#fff;
 -webkit-transition-duration: 0.3s;
 -moz-transition-duration: 0.3s;
@@ -2015,7 +2021,7 @@ height: 0;
 
 
 /*
-' BLOG 
+' BLOG
 */
 
 #blog .black-tint, #blog .blue-tint, #blog .red-tint, #blog .white-tint, #features .black-tint{
@@ -2242,25 +2248,25 @@ background:#0099ff;
 	Supersized - Fullscreen Slideshow jQuery Plugin
 	Version : 3.2.7
 	Site	: www.buildinternet.com/project/supersized
-	
+
 	Author	: Sam Dunn
 	Company : One Mighty Roar (www.onemightyroar.com)
 	License : MIT License / GPL License
-	
+
 */
 
 	#supersized-loader { position:absolute; top:50%; left:50%; z-index:0; width:60px; height:60px; margin:-30px 0 0 -30px; text-indent:-999em;}
-	
+
 	#supersized {  display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-999; height:100%; width:100%; }
 		#supersized img { width:auto !important; height:auto; position:relative; display:none; outline:none; border:none; max-width:inherit; }
 			#supersized.speed img { -ms-interpolation-mode:nearest-neighbor; image-rendering: -moz-crisp-edges; }	/*Speed*/
 			#supersized.quality img { -ms-interpolation-mode:bicubic; image-rendering: optimizeQuality; }			/*Quality*/
-		
+
 		#supersized li { display:block; list-style:none; z-index:-30; position:fixed; overflow:hidden; top:0; left:0; width:100%; height:100%; background:#111; }
 		#supersized a { width:100%; height:100%; display:block; }
 			#supersized li.prevslide { z-index:-20; }
 			#supersized li.activeslide { z-index:-10; }
-			#supersized li.image-loading { background:#111 url(https://cdn.shopify.com/s/files/1/0289/9509/t/1/assets/progress.gif) no-repeat center center; width:100%; height:100%; }
+			#supersized li.image-loading { background:#111; width:100%; height:100%; }
 				#supersized li.image-loading img{ visibility:hidden; }
 			#supersized li.prevslide img, #supersized li.activeslide img{ display:inline; }
 
@@ -2374,7 +2380,7 @@ font-style:italic;
  * Contributing author: Tyler Smith (@mbmufffin)
  */
 
- 
+
 /* Browser Resets */
 .flex-container a:active,
 .flexslider a:active,
@@ -2382,18 +2388,18 @@ font-style:italic;
 .flexslider a:focus  {outline: none;}
 .slides,
 .flex-control-nav,
-.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
 
 /* FlexSlider Necessary Styles
-*********************************/ 
+*********************************/
 .flexslider {margin: 0; padding: 0;}
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
 .flexslider .slides img {width: 100%; display: block;}
 .flex-pauseplay span {text-transform: capitalize;}
 
 /* Clearfix for the .slides element */
-.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
-html[xmlns] .slides {display: block;} 
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
 * html .slides {height: 1%;}
 
 /* No JavaScript Fallback */
@@ -2573,7 +2579,7 @@ color:#0099ff;
 }
 
 
-.flexslider .slides > li:first-child {display: block; -webkit-backface-visibility: visible;} 
+.flexslider .slides > li:first-child {display: block; -webkit-backface-visibility: visible;}
 
 .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;}
 
@@ -2643,6 +2649,7 @@ a .icon-stack,a .icon-spin{display:inline-block;text-decoration:none;}
 .icon-flip-vertical:before{-webkit-transform:scale(1, -1);-moz-transform:scale(1, -1);-ms-transform:scale(1, -1);-o-transform:scale(1, -1);transform:scale(1, -1);}
 a .icon-rotate-90:before,a .icon-rotate-180:before,a .icon-rotate-270:before,a .icon-flip-horizontal:before,a .icon-flip-vertical:before{display:inline-block;}
 .icon-glass:before{content:"\f000";}
+.icon-basket:before {content: "\f07a"; font-size:22px;}
 .icon-music:before{content:"\f001";}
 .icon-search:before{content:"\f002";}
 .icon-envelope-alt:before{content:"\f003";}
@@ -2655,7 +2662,7 @@ a .icon-rotate-90:before,a .icon-rotate-180:before,a .icon-rotate-270:before,a .
 .icon-th:before{content:"\f00a";}
 .icon-th-list:before{content:"\f00b";}
 .icon-ok:before{content:"\f00c";}
-.icon-remove:before{content:"\f00d";}
+.icon-remove:before{content:"\f00d";font-size:40px;}
 .icon-zoom-in:before{content:"\f00e";}
 .icon-zoom-out:before{content:"\f010";}
 .icon-power-off:before,.icon-off:before{content:"\f011";}
@@ -3011,7 +3018,7 @@ a .icon-rotate-90:before,a .icon-rotate-180:before,a .icon-rotate-270:before,a .
  *		Tomi Hiltunen
  *		tomi@mitakuuluu.fi
  *		http://fi.linkedin.com/in/tomihiltunen/
- *		
+ *
  *		Angelos Arnis
  *		http://fi.linkedin.com/in/angelosarnis/
  *
@@ -3066,7 +3073,7 @@ background:none !important;
 			-moz-border-radius: 100%;
 			cursor: pointer;
 		}
-                
+
 
 /* DEVICES */
 
