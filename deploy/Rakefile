@@ -3,10 +3,10 @@ require 'yaml'
 desc "Check environment"
 task "env" do
   file = YAML.load_file('config.yml')
-  if file[:store] == 'zoraab-dev.myshopify.com'
+  if file[:store] == 'mintsocks-dev.myshopify.com'
     puts "You are in Development"
   end
-  if file[:store] == 'zoraab.myshopify.com'
+  if file[:store] == 'mintsocks.myshopify.com'
     puts "You are in Production"
   end
 end
